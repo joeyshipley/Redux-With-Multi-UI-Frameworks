@@ -5,7 +5,7 @@ const initial_state = {
   total: 0
 };
 
-function calculatorReducer(state = initialState, action) {
+function calculatorReducer(state = initial_state, action) {
   let calculator = new Calculator();
 
   switch (action.type) {
