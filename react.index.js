@@ -1,4 +1,4 @@
-require('./assets/styles/site.scss');
+import './assets/styles/site.scss';
 
 import Calculator from './src/calculator';
 
