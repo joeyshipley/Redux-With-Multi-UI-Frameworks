@@ -1,13 +1,7 @@
 import { TYPES as TYPES } from './calculator.actions';
 import Calculator from './calculator';
 
-const initial_state = {
-  value1: undefined,
-  value2: undefined,
-  total: 0
-};
-
-function calculator(state = initial_state, action) {
+function calculator(state = {}, action) {
   let calculator = new Calculator();
 
   switch (action.type) {

@@ -2,11 +2,7 @@ import { TYPES as TYPES } from './localization.actions';
 import EnglishLocal from './local.english';
 import DroidLocal from './local.droid';
 
-const initial_state = {
-  local: TYPES.ENGLISH
-};
-
-function localization(state = initial_state, action) {
+function localization(state = {}, action) {
   var local;
 
   switch (action.type) {
