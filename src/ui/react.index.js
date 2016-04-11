@@ -1,11 +1,11 @@
 import '../../assets/styles/site.scss';
 
-import { ACTIONS as actions } from '../app/actions';
+import { ACTIONS as ACTIONS } from '../app/actions';
 import Calculator from '../app/calculator';
 
 (function() {
   console.log('ReactJS');
-  console.log(actions.CALC.ADD(5, 6));
+  console.log(ACTIONS.CALC.ADD(5, 6));
 
   var calc = new Calculator();
   calc
