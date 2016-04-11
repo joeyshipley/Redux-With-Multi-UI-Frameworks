@@ -1,20 +1,17 @@
-import Promise from 'bluebird';
-
 class Calculator {
   constructor() {}
 
   add(value1, value2) {
-    return new Promise((resolve, reject) => {
-      var result = value1 + value2;
-      return resolve(result);
-    });
+    console.log(value1);
+    console.log(value2);
+    var result = value1 + value2;
+    console.log(result);
+    return result;
   }
 
   subract(value1, value2) {
-    return new Promise((resolve, reject) => {
-      var result = value1 - value2;
-      return resolve(result);
-    });
+    var result = value1 - value2;
+    return result;
   }
 }
 export default Calculator;

@@ -9,11 +9,17 @@ import Calculator from '../app/calculator/calculator';
   console.log(store.getState());
   console.log(ACTIONS.ADD(1, 2));
 
-  var calc = new Calculator();
-  calc
-    .add(1, 2)
-    .then((result) => {
-      console.log(result);
-    })
-    .catch((err) => { console.log(err); });
+  let unsubscribe = store.subscribe(() =>
+    console.log(store.getState())
+  );
+  store.dispatch(ACTIONS.ADD(1, 2));
+  unsubscribe();
+
+  //var calc = new Calculator();
+  //calc
+  //  .add(1, 2)
+  //  .then((result) => {
+  //    console.log(result);
+  //  })
+  //  .catch((err) => { console.log(err); });
 }());

@@ -6,8 +6,9 @@ const initial_state = {
   local: TYPES.ENGLISH
 };
 
-function localizationReducer(state = initial_state, action) {
+function localization(state = initial_state, action) {
   var local;
+
   switch (action.type) {
     case TYPES.ENGLISH:
       local = new EnglishLocal();
@@ -26,4 +27,4 @@ function localizationReducer(state = initial_state, action) {
   }
 }
 
-export default localizationReducer;
+export default localization;
