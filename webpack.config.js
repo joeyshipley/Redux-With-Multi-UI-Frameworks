@@ -1,7 +1,7 @@
 module.exports = {
   entry: {
-        ng: "./angular.index.js",
-        react: "./react.index.js"
+        ng: "./src/ui/angular.index.js",
+        react: "./src/ui/react.index.js"
   },
   output: {
     path: __dirname + '/public',
