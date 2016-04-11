@@ -1,3 +1,6 @@
+// NOTE: inside 'pure' boundry
+// NOTE: defines actions and their creation
+
 const action_types = {
   ADD: 'CALC_ADD',
   SUBTRACT: 'CALC_SUBTRACT'

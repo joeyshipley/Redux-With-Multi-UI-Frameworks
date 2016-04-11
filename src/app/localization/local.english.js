@@ -1,5 +1,3 @@
-import Promise from 'bluebird';
-
 class EnglishLocal {
   constructor() {
     this.page_title = 'Calculator Fun!';

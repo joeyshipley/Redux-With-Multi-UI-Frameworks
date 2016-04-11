@@ -1,5 +1,3 @@
-import Promise from 'bluebird';
-
 class DroidLocal {
   constructor() {
     this.page_title = 'Beep-bo-oop!';

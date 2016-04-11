@@ -1,25 +1,46 @@
 import '../../assets/styles/site.scss';
 
+import { Promise as Promise } from 'es6-promise';
 import store from '../app/app.store';
-import { ACTIONS as ACTIONS } from '../app/calculator/calculator.actions';
-import Calculator from '../app/calculator/calculator';
+import CalculatorInteractor from '../app/calculator/calculator.interactor';
+const calculator = new CalculatorInteractor();
 
 (function() {
   console.log('AngularJS');
-  console.log(store.getState());
-  console.log(ACTIONS.ADD(1, 2));
 
-  let unsubscribe = store.subscribe(() =>
-    console.log(store.getState())
-  );
-  store.dispatch(ACTIONS.ADD(1, 2));
+  let unsubscribe = store.subscribe(() => {
+    //console.log(store.getState())
+  });
+
+  add()
+    .then(subtract)
+    .catch((err) => { console.log(err); reject(err); })
+
   unsubscribe();
-
-  //var calc = new Calculator();
-  //calc
-  //  .add(1, 2)
-  //  .then((result) => {
-  //    console.log(result);
-  //  })
-  //  .catch((err) => { console.log(err); });
 }());
+
+function add() {
+  return new Promise((resolve, reject) => {
+    return calculator
+      .add(1, 1)
+      .then(() => {
+        console.log(' ===[ ADD COMPLETED ]=== ');
+        console.log(store.getState().calculator);
+        return resolve(true);
+      })
+    .catch((err) => { console.log(err); reject(err); })
+  });
+}
+
+function subtract() {
+  return new Promise((resolve, reject) => {
+    return calculator
+      .subtract(11, 1)
+      .then(() => {
+        console.log(' ===[ SUBTRACT COMPLETED ]=== ');
+        console.log(store.getState().calculator);
+        return resolve(true);
+      })
+    .catch((err) => { console.log(err); reject(err); })
+  });
+}

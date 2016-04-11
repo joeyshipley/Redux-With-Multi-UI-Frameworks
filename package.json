@@ -10,7 +10,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "bluebird": "^3.3.4",
+    "es6-promise": "^3.1.2",
     "lodash": "^4.9.0",
     "redux": "^3.4.0"
   },
