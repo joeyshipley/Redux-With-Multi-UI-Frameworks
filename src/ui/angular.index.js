@@ -1,11 +1,13 @@
 import '../../assets/styles/site.scss';
 
-import { ACTIONS as ACTIONS } from '../app/actions';
-import Calculator from '../app/calculator';
+import store from '../app/app.store';
+import { ACTIONS as ACTIONS } from '../app/calculator/calculator.actions';
+import Calculator from '../app/calculator/calculator';
 
 (function() {
   console.log('AngularJS');
-  console.log(ACTIONS.CALC.ADD(1, 2));
+  console.log(store.getState());
+  console.log(ACTIONS.ADD(1, 2));
 
   var calc = new Calculator();
   calc

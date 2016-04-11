@@ -7,15 +7,16 @@ const initial_state = {
 };
 
 function localizationReducer(state = initial_state, action) {
+  var local;
   switch (action.type) {
     case TYPES.ENGLISH:
-      let local = new EnglishLocal();
+      local = new EnglishLocal();
       return Object.assign({}, state, {
           local: TYPES.ENGLISH
         },
         local.translate());
     case TYPES.DROID:
-      let local = new DroidLocal();
+      local = new DroidLocal();
       return Object.assign({}, state, {
           local: TYPES.DROID
         },
