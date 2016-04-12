@@ -5,8 +5,9 @@
 
 ### How do I get set up? ###
 
-* TODO
-* Summary of set up
-* Configuration
-* Dependencies
-* How to run tests
+* Terminal: npm install
+
+##### And then choose your front end... #####
+
+* Terminal: npm run react
+* Terminal: npm run angular
