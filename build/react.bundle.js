@@ -69,12 +69,13 @@
 	(0, _reactDom.render)(_react2.default.createElement(
 	  _reactRedux.Provider,
 	  { store: _app2.default },
+	  _react2.default.createElement(_calculator2.default, null),
 	  _react2.default.createElement(
 	    _reactRouter.Router,
 	    { history: _reactRouter.hashHistory },
 	    _react2.default.createElement(_reactRouter.Route, { name: 'root', path: '/', component: _calculator2.default })
 	  )
-	), document.getElementById('app'));
+	), document.getElementById('page-content'));
 
 /***/ },
 /* 1 */
