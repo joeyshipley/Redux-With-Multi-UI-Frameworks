@@ -17,7 +17,8 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-            presets: ["es2015", "react"]
+          presets: ["es2015", "stage-0", "react"],
+          plugins: ["angular2-annotations", "transform-runtime", "transform-decorators-legacy"]
         }
       },
       {

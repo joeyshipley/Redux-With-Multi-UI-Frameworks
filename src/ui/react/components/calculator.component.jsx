@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux'
-import HeaderComponent from './header.jsx';
+import HeaderComponent from './header.component.jsx';
 import LocalizationInteractor from '../../../app/localization/localization.interactor.js';
 import CalculatorInteractor from '../../../app/calculator/calculator.interactor.js';
 
