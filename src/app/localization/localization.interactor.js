@@ -2,7 +2,7 @@ import { Promise as Promise } from 'es6-promise';
 import store from '../app.store';
 import { ACTIONS as ACTIONS } from './localization.actions';
 
-class CalculatorInteractor {
+class LocalizationInteractor {
   constructor() {}
 
   english() {
@@ -21,4 +21,4 @@ class CalculatorInteractor {
     });
   }
 }
-export default CalculatorInteractor;
+export default LocalizationInteractor;

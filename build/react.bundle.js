@@ -69,7 +69,6 @@
 	(0, _reactDom.render)(_react2.default.createElement(
 	  _reactRedux.Provider,
 	  { store: _app2.default },
-	  _react2.default.createElement(_calculator2.default, null),
 	  _react2.default.createElement(
 	    _reactRouter.Router,
 	    { history: _reactRouter.hashHistory },
@@ -2427,9 +2426,11 @@
 	  switch (action.type) {
 	    case _localization.TYPES.ENGLISH:
 	      local = new _local2.default();
-	      return Object.assign({}, state, {
+	      var new_state = Object.assign({}, state, {
 	        local: _localization.TYPES.ENGLISH
 	      }, local.translate());
+	      console.log(new_state);
+	      return new_state;
 	    case _localization.TYPES.DROID:
 	      local = new _local4.default();
 	      return Object.assign({}, state, {
@@ -28203,7 +28204,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRedux = __webpack_require__(194);
+
 	var _es6Promise = __webpack_require__(5);
+
+	var _localizationInteractor = __webpack_require__(260);
+
+	var _localizationInteractor2 = _interopRequireDefault(_localizationInteractor);
 
 	var _calculatorInteractor2 = __webpack_require__(29);
 
@@ -28211,25 +28218,91 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
-
 	var _calculatorInteractor = new _calculatorInteractor3.default();
 
-	var Calculator = function Calculator(_ref) {
-	  _objectDestructuringEmpty(_ref);
+	var mapStateToProps = function mapStateToProps(state) {
+	  console.log(state);
+	  return {
+	    text: state.localization
+	  };
+	};
 
+	var Calculator = function Calculator(_ref) {
+	  var text = _ref.text;
 	  return _react2.default.createElement(
 	    'div',
 	    null,
 	    _react2.default.createElement(
 	      'h2',
 	      null,
+	      text.page_title
+	    ),
+	    _react2.default.createElement(
+	      'h3',
+	      null,
 	      'Hello World!'
 	    )
 	  );
 	};
 
-	exports.default = Calculator;
+	var CalculatorContainer = (0, _reactRedux.connect)(mapStateToProps)(Calculator);
+
+	exports.default = CalculatorContainer;
+
+/***/ },
+/* 260 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _es6Promise = __webpack_require__(5);
+
+	var _app = __webpack_require__(10);
+
+	var _app2 = _interopRequireDefault(_app);
+
+	var _localization = __webpack_require__(26);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var LocalizationInteractor = function () {
+	  function LocalizationInteractor() {
+	    _classCallCheck(this, LocalizationInteractor);
+	  }
+
+	  _createClass(LocalizationInteractor, [{
+	    key: 'english',
+	    value: function english() {
+	      console.log('ENGLISH');
+	      return new _es6Promise.Promise(function (resolve, reject) {
+	        var result = _localization.ACTIONS.ENGLISH();
+	        var dispatch = _app2.default.dispatch(result);
+	        return resolve(dispatch);
+	      });
+	    }
+	  }, {
+	    key: 'droid',
+	    value: function droid() {
+	      return new _es6Promise.Promise(function (resolve, reject) {
+	        var result = _localization.ACTIONS.DROID();
+	        var dispatch = _app2.default.dispatch(result);
+	        return resolve(dispatch);
+	      });
+	    }
+	  }]);
+
+	  return LocalizationInteractor;
+	}();
+
+	exports.default = LocalizationInteractor;
 
 /***/ }
 /******/ ]);

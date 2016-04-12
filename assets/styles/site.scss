@@ -1,9 +1,38 @@
-HTML, BODY
+@import 'reset';
+
+
+/* ----- *\
+
+   Layout: Sets
+
+\* ----- */
+
+.relative-block
 {
     position: relative;
     display: block;
     margin: 0;
     padding: 0;
+}
+
+.inline-block
+{
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ----- *\
+
+   Layout: Page
+
+\* ----- */
+
+HTML, BODY
+{
+    @extend .relative-block;
     font-family: Verdana, Geneva, sans-serif;
     font-size: 100%;
     line-height: 1.5em;
@@ -11,11 +40,57 @@ HTML, BODY
 
 #page-content
 {
-    position: relative;
-    display: block;
+    @extend .relative-block;
     width: 40%;
-    margin: 2em;
-    padding: 1em;
     background-color: #EEEEEE;
     border: 1px solid #999999;
+}
+
+
+/* ----- *\
+
+   Element: Header
+
+\* ----- */
+
+#page-header
+{
+    @extend .relative-block;
+    background-color: #666666;
+
+    .title
+    {
+      @extend .inline-block;
+      font-weight: bold;
+      font-size: 1.5em;
+      line-height: 2em;
+    }
+
+    .localization-container
+    {
+        @extend .inline-block;
+        float: right;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        LI
+        {
+            display: inline-block;
+            cursor: pointer;
+            padding: 0 1em;
+
+            &.selected
+            {
+                background: #EEEEEE;
+                border-bottom: 4px solid #666666;
+            }
+
+            &:hover, &.selected:hover
+            {
+                background-color: #CCCCCC;
+                border-bottom: 4px solid #999999;
+            }
+        }
+    }
 }

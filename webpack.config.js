@@ -2,7 +2,7 @@ const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 module.exports = {
   entry: {
-    ng: "./src/ui/angular.index.js",
+    ng: "./src/ui/angular/angular.app.js",
     react: "./src/ui/react/react.app.jsx"
   },
   output: {

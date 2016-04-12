@@ -2450,9 +2450,11 @@
 	  switch (action.type) {
 	    case _localization.TYPES.ENGLISH:
 	      local = new _local2.default();
-	      return Object.assign({}, state, {
+	      var new_state = Object.assign({}, state, {
 	        local: _localization.TYPES.ENGLISH
 	      }, local.translate());
+	      console.log(new_state);
+	      return new_state;
 	    case _localization.TYPES.DROID:
 	      local = new _local4.default();
 	      return Object.assign({}, state, {
