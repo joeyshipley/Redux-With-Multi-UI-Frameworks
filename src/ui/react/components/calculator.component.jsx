@@ -44,6 +44,8 @@ const Calculator = ({
   pressNumber, pressAdd, pressSubtract, pressEquals
 }) => (
   <div>
+    <h1>React + Redux</h1>
+
     <HeaderComponent />
 
     <div id="calc-container">
