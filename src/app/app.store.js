@@ -7,8 +7,12 @@ let store = createStore(reducer, {
     local: LOCALS.ENGLISH
   },
   calculator: {
-    value1: undefined,
-    value2: undefined,
+    value1: '',
+    value2: '',
+    allowEquals: false,
+    hasCommittedOperator: false,
+    hasCompletedValue1: false,
+    hasCompletedValue2: false,
     total: 0
   }
 });

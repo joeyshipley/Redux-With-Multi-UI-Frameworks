@@ -1,6 +1,5 @@
 @import 'reset';
 
-
 /* ----- *\
 
    Layout: Sets
@@ -9,20 +8,19 @@
 
 .relative-block
 {
-    position: relative;
-    display: block;
-    margin: 0;
-    padding: 0;
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
 .inline-block
 {
-    position: relative;
-    display: inline-block;
-    margin: 0;
-    padding: 0;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
 }
-
 
 /* ----- *\
 
@@ -32,20 +30,19 @@
 
 HTML, BODY
 {
-    @extend .relative-block;
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 100%;
-    line-height: 1.5em;
+  @extend .relative-block;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 100%;
+  line-height: 1.5em;
 }
 
 #page-content
 {
-    @extend .relative-block;
-    width: 40%;
-    background-color: #EEEEEE;
-    border: 1px solid #999999;
+  @extend .relative-block;
+  width: 40%;
+  background-color: #EEEEEE;
+  border: 1px solid #999999;
 }
-
 
 /* ----- *\
 
@@ -55,42 +52,106 @@ HTML, BODY
 
 #page-header
 {
-    @extend .relative-block;
-    background-color: #666666;
+  @extend .relative-block;
+  background-color: #666666;
 
-    .title
+  .title
+  {
+    @extend .inline-block;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 2em;
+  }
+
+  .localization-container
+  {
+    @extend .inline-block;
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    LI
+    {
+      display: inline-block;
+      cursor: pointer;
+      padding: 0 1em;
+
+      &.selected
+      {
+        background: #EEEEEE;
+        border-bottom: 4px solid #666666;
+      }
+
+      &:hover, &.selected:hover
+      {
+        background-color: #CCCCCC;
+        border-bottom: 4px solid #999999;
+      }
+    }
+  }
+}
+
+/* ----- *\
+
+   Element: Calculator Container
+
+\* ----- */
+
+#calc-container
+{
+  .calc-total
+  {
+    @extend .relative-block;
+    padding: 1em;
+    text-align: right;
+    border: 1px solid #666666;
+  }
+
+  .calc-numbers
+  {
+    @extend .inline-block;
+    vertical-align: top;
+    width: 71%;
+    margin-right: 4%;
+
+    .calc-button
     {
       @extend .inline-block;
-      font-weight: bold;
-      font-size: 1.5em;
-      line-height: 2em;
+      width: 25%;
+      margin: 6px;
+      padding: 6px;
+      text-align: center;
+      cursor: pointer;
+      background-color: #ADD8E6;
+      border: 1px solid #999999;
     }
+  }
 
-    .localization-container
+  .calc-operators
+  {
+    @extend .inline-block;
+    vertical-align: top;
+    width: 25%;
+
+    .calc-button
     {
-        @extend .inline-block;
-        float: right;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-
-        LI
-        {
-            display: inline-block;
-            cursor: pointer;
-            padding: 0 1em;
-
-            &.selected
-            {
-                background: #EEEEEE;
-                border-bottom: 4px solid #666666;
-            }
-
-            &:hover, &.selected:hover
-            {
-                background-color: #CCCCCC;
-                border-bottom: 4px solid #999999;
-            }
-        }
+      @extend .inline-block;
+      width: 75%;
+      margin: 6px;
+      padding: 6px;
+      text-align: center;
+      cursor: pointer;
+      background-color: #9ACD32;
+      border: 1px solid #999999;
     }
+  }
+
+  .calc-button.disabled
+  {
+    cursor: default;
+    color: #CCCCCC;
+    background-color: #EEEEEE;
+    border: 1px dashed #999999;
+  }
 }

@@ -5,28 +5,75 @@ import { TYPES as TYPES } from './calculator.actions';
 
 function calculator(state = {}, action) {
   switch (action.type) {
+    case TYPES.BUILD_NUMBER:
+      return buildNumber(state, action.singleDigit)
     case TYPES.ADD:
-      return Object.assign({}, state, {
-        value1: undefined,
-        value2: undefined,
-        total: add(action.value1, action.value2)
-      });
+      return add(state, state.value1, state.value2)
     case TYPES.SUBTRACT:
-      return Object.assign({}, state, {
-        value1: undefined,
-        value2: undefined,
-        total: subtract(action.value1, action.value2)
-      });
+      return subtract(state, state.value1, state.value2)
+    case TYPES.COMMIT_OPERATOR:
+      return commitOperator(state);
     default:
       return state;
   }
 
-  function add(value1, value2) {
-    return value1 + value2;
+  function buildNumber(state, singleDigit) {
+    var newState = Object.assign({}, state);
+
+    if(!newState.hasCompletedValue1) {
+      newState.value1 += '' + singleDigit;
+      newState.total = newState.value1;
+    } else {
+      newState.value2 += '' + singleDigit;
+      newState.total = newState.value2;
+    }
+
+    if(newState.value1 !== '')
+    {
+      newState.allowOperators = true;
+    }
+    if(newState.value1 !== '' && newState.value2 !== '') {
+      newState.allowEquals = true;
+    }
+
+    return newState;
   }
 
-  function subtract(value1, value2) {
-    return value1 - value2;
+  function commitOperator(state) {
+    var newState = Object.assign({}, state, {
+      hasCompletedValue1: true,
+      hasCommittedOperator: true
+    });
+
+    return newState;
+  }
+
+  function add(state, value1, value2) {
+    var newState = Object.assign({}, state, resetCalcState());
+
+    newState.total = Number.parseInt(value1) + Number.parseInt(value2);
+
+    return newState;
+  }
+
+  function subtract(state, value1, value2) {
+    var newState = Object.assign({}, state, resetCalcState());
+
+    newState.total = Number.parseInt(value1) - Number.parseInt(value2);
+
+    return newState;
+  }
+
+  function resetCalcState() {
+    return {
+      value1: '',
+      value2: '',
+      hasCompletedValue1: false,
+      hasCompletedValue2: false,
+      hasCommittedOperator: false,
+      allowOperators: false,
+      allowEquals: false,
+    };
   }
 }
 

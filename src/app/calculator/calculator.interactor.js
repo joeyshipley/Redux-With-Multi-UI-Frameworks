@@ -7,17 +7,33 @@ import { ACTIONS as ACTIONS } from './calculator.actions';
 class CalculatorInteractor {
   constructor() {}
 
-  add(value1, value2) {
+  commitOperator() {
     return new Promise((resolve, reject) => {
-      var result = ACTIONS.ADD(value1, value2);
+      var result = ACTIONS.COMMIT_OPERATOR();
       var dispatched = store.dispatch(result);
       return resolve(dispatched);
     });
   }
 
-  subtract(value1, value2) {
+  buildNumber(singleDigit) {
     return new Promise((resolve, reject) => {
-      var result = ACTIONS.SUBTRACT(value1, value2);
+      var result = ACTIONS.BUILD_NUMBER(singleDigit);
+      var dispatched = store.dispatch(result);
+      return resolve(dispatched);
+    });
+  }
+
+  add() {
+    return new Promise((resolve, reject) => {
+      var result = ACTIONS.ADD();
+      var dispatched = store.dispatch(result);
+      return resolve(dispatched);
+    });
+  }
+
+  subtract() {
+    return new Promise((resolve, reject) => {
+      var result = ACTIONS.SUBTRACT();
       var dispatched = store.dispatch(result);
       return resolve(dispatched);
     });

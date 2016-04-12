@@ -1,10 +1,9 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux'
-import { Promise as Promise } from 'es6-promise';
-import LocalizationInteractor from '../../../app/localization/localization.interactor.js';
 import { TYPES as LOCAL_TYPES } from '../../../app/localization/localization.actions.js';
+import LocalizationInteractor from '../../../app/localization/localization.interactor.js';
 
-const _localizationInteractor = new LocalizationInteractor();
+var _localizationInteractor = new LocalizationInteractor();
 
 const mapStateToProps = (state) => {
   return {

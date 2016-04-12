@@ -2,16 +2,24 @@
 // NOTE: defines actions and their creation
 
 const action_types = {
+  BUILD_NUMBER: 'CALC_BUILD_NUMBER',
+  COMMIT_OPERATOR: 'CALC_COMMIT_OPERATOR',
   ADD: 'CALC_ADD',
   SUBTRACT: 'CALC_SUBTRACT'
 };
 
 const action_creators = {
-  ADD: (value1, value2) => {
-    return Object.assign({ type: action_types.ADD }, { value1, value2 });
+  BUILD_NUMBER: (singleDigit) => {
+    return Object.assign({ type: action_types.BUILD_NUMBER }, { singleDigit });
   },
-  SUBTRACT: (value1, value2) => {
-    return Object.assign({ type: action_types.SUBTRACT }, { value1, value2 });
+  COMMIT_OPERATOR: () => {
+    return Object.assign({ type: action_types.COMMIT_OPERATOR }, {});
+  },
+  ADD: () => {
+    return Object.assign({ type: action_types.ADD }, {});
+  },
+  SUBTRACT: () => {
+    return Object.assign({ type: action_types.SUBTRACT }, {});
   }
 };
 
