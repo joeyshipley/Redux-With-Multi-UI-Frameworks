@@ -1,7 +1,15 @@
 ### Purpose ###
 
-* Calculator logic housed in Redux
-* Multiple UI implementations: Angular, Ember, React
+Experiment with multiple UI implementations that share application logic.
+
+##### Application Logic #####
+
+* Redux
+
+##### UI Implementations #####
+
+* React
+* Angular2
 
 ### How do I get set up? ###
 
