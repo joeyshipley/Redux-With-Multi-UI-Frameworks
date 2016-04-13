@@ -27,7 +27,7 @@ To serve as the communication across the boundry of async/sync and clean/non-cle
 
 While this example only uses a few of the 'currently' modern frameworks, near any framework that allows you to update the UI based on state given to it can be used in this structure.
 
-For example looking at this commit when implemented the Angular2 UI implementation of the calculator, I had only touched a React file because of some cosmetic changes that was noticed when working on the Angular version. If I had been a little smarter about it, I would have waited for a seperate commit to show this better. 
+For example looking at this commit when implementing the Angular2 UI version of the calculator, I had only touched a React file because of some cosmetic changes that was noticed when working on the Angular version. If I had been a little smarter about it, I would have waited for a seperate commit to show this better. 
 
 https://github.com/joeyshipley/Redux-With-Multi-UI-Frameworks/commit/3142f400ef19b3fb3046d706f25988293f499c82
 
