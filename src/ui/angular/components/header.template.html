@@ -1,0 +1,12 @@
+<div id="page-header">
+    <div class="title">{{ text.page_title }}</div>
+
+    <ul class="localization-container">
+        <li class="{{ text.local === LOCAL_TYPES.ENGLISH ? 'selected' : '' }}"
+            (click)="setLocalEnglish()"
+            >English</li>
+        <li class="{{ text.local === LOCAL_TYPES.DROID ? 'selected' : '' }}"
+            (click)="setLocalDroid()"
+            >Droid</li>
+    </ul>
+</div>

@@ -1,0 +1,28 @@
+<div>
+    <h1>Angular2 + Redux</h1>
+    <header-component></header-component>
+
+    <div id="calc-container">
+        <div class="calc-total">{{ calcDisplayValue }}</div>
+        <div class="calc-numbers">
+            <span class="calc-button" (click)="pressNumber(9)">9</span>
+            <span class="calc-button" (click)="pressNumber(8)">8</span>
+            <span class="calc-button" (click)="pressNumber(7)">7</span>
+            <span class="calc-button" (click)="pressNumber(6)">6</span>
+            <span class="calc-button" (click)="pressNumber(5)">5</span>
+            <span class="calc-button" (click)="pressNumber(4)">4</span>
+            <span class="calc-button" (click)="pressNumber(3)">3</span>
+            <span class="calc-button" (click)="pressNumber(2)">2</span>
+            <span class="calc-button" (click)="pressNumber(1)">1</span>
+            <span class="calc-button" (click)="pressNumber(0)">0</span>
+        </div>
+        <div class="calc-operators">
+            <span class="{{ 'calc-button' + ((!allowOperators || hasCommittedOperator) ? ' disabled' : '') }}"
+                (click)="pressAdd()">+</span>
+            <span class="{{ 'calc-button' + ((!allowOperators || hasCommittedOperator) ? ' disabled' : '') }}"
+                (click)="pressSubtract()">-</span>
+            <span class="{{ 'calc-button' + (!allowEquals ? ' disabled' : '') }}"
+                (click)="pressEquals()">=</span>
+        </div>
+    </div>
+</div>

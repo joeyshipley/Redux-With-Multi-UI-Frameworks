@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux'
 import HeaderComponent from './header.component.jsx';
-import LocalizationInteractor from '../../../app/localization/localization.interactor.js';
 import CalculatorInteractor from '../../../app/calculator/calculator.interactor.js';
 
 var _calculatorInteractor = new CalculatorInteractor();
@@ -11,7 +10,6 @@ var _localState = {
 
 const mapStateToProps = (state) => {
   return {
-    text: state.localization,
     calcDisplayValue: state.calculator.total,
     hasCommittedOperator: state.calculator.hasCommittedOperator,
     allowOperators: state.calculator.allowOperators,
@@ -22,6 +20,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     pressNumber: (value) => {
+      if(!this.allowOperators || this.hasCommittedOperator) { return; }
+
       _calculatorInteractor.buildNumber(value);
     },
     pressAdd: () => {
@@ -39,7 +39,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const Calculator = ({
-  text, calcDisplayValue,
+  calcDisplayValue,
   hasCommittedOperator, allowOperators, allowEquals,
   pressNumber, pressAdd, pressSubtract, pressEquals
 }) => (
@@ -63,7 +63,6 @@ const Calculator = ({
         <span className="calc-button" onClick={ pressNumber.bind(this, 0) }>0</span>
       </div>
       <div className="calc-operators">
-        <div>{ hasCommittedOperator }</div>
         <span className={ "calc-button" + ((!allowOperators || hasCommittedOperator) ? " disabled" : "") }
           onClick={ (allowOperators && !hasCommittedOperator) ? pressAdd : () => {} }
         >+</span>

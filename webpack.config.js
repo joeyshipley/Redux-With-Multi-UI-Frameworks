@@ -24,8 +24,15 @@ module.exports = {
       {
         test: /\.scss$/,
         loaders: ["style", "css", "sass"]
+      },
+      {
+        test: /\.html$/,
+        loader: "html"
       }
     ]
+  },
+  htmlLoader: {
+    ignoreCustomFragments: [/\{\{.*?}}/]
   },
   plugins: [
     new OpenBrowserPlugin({ url: 'http://localhost:8080' })
