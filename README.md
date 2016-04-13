@@ -36,17 +36,15 @@ https://github.com/joeyshipley/ReduxCalc/commit/3142f400ef19b3fb3046d706f2598829
 
 ##### Flow #####
 
+```
 UI Framework (Angular | React | etc...)
-
      |
      V
-
 Interactor (Actions | Dispatch | Promises | ServerSide Interactions | etc...)
-
      |
      V
-
 State Management (Reducers | Store)
+```
 
 ##### Folder Structure #####
 
