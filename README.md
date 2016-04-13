@@ -2,15 +2,12 @@
 
 Experiment with protecting the frontend logic from the changing JS frameworks.
 
-###### Shared ######
+##### Current Implementations #####
 
-* Redux
-* Interactors
-
-###### UI #####
-
-* React
-* Angular2
+* (UI) - React
+* (UI) - Angular2
+* (Shared) - Redux
+* (Shared) - Interactors
 
 ## Structure ##
 
