@@ -12,11 +12,33 @@ Experiment with protecting the frontend logic from the changing JS frameworks.
 * React
 * Angular2
 
-### Architecture ###
+### Structure ###
 
-Inserting a boundry in the frontend to seperate the UI logic from the Application logic. Looking at the UI frameworks in place, it is reasonable to assume that they can be replaced with near any UI framework with little to no changes to the Interactor layer back.
+Inserting a boundry in the frontend to seperate the UI logic from the Application logic. Looking at the UI frameworks in place, it is reasonable to assume that they can be replaced with near any UI framework with little to no changes to the Interactor or State layers.
 
-Currently this experiment utilizes Redux as the applications data/state management, where all of its logic should be 'clean', immutable, without side effects. An interactor layer sits between Redux and the UI implementation. The interactors serve as the transition from clean to the variety of things that will be needed to make an app function... .
+Currently this experiment utilizes Redux as the applications data/state management, where all of its logic should be 'clean', immutable, without side effects. 
+
+###### State Management ######
+
+The state/data is housed in a seperate section of frontend to protect it from the complexity of user behavior and the changing javascript landscape. In this layer, a strict no side effect policy is in place to make sure that it is easy to digest what is happening to and effecting the data, while picking up a path to simple and solid tests. Currently this example is using Redux. You could easily replace it with Flux as they are similiar, but nothing would stop you from using something else or rolling your own custom pattern.
+
+###### Interactors ######
+
+To serve as the communication across the boundry of async/sync and clean/non-clean, the Interactor layer houses that transition logic. Currently, the thought is to have the interactors handle the synchronous Actions and then to Dispatch and return Promises to the UI layer. This will keep the transition between the two different flows from bleeding into the other sides of the boundry.
+
+###### UI Frameworks ######
+
+While this example only uses a few of the 'currently' modern frameworks, near any framework that allows you to update the UI based on state given to it can be used in this structure.
+
+###### Flow ######
+
+UI Framework (Angular | React | etc...)
+     |
+     V
+Interactor (Actions | Dispatch | Promises | ServerSide Interactions | etc...)
+     |
+     V
+State Management (Reducers | Store)
 
 ### Setup ###
 
