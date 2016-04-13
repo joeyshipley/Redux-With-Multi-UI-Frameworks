@@ -1,6 +1,6 @@
 ## Purpose ##
 
-Experiment with protecting the frontend logic from the changing JS frameworks.
+Explore protecting the frontend logic from the ever changing JS frameworks world.
 
 ##### Current Implementations #####
 
