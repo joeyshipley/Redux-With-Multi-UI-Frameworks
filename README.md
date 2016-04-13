@@ -11,7 +11,7 @@ Explore protecting the frontend logic from the ever changing JS frameworks world
 
 ## Structure ##
 
-Inserting a boundry in the frontend to seperate the UI logic from the Application logic. Looking at the UI frameworks in place, it is reasonable to assume that they can be replaced with near any UI framework with little to no changes to the Interactor or State layers.
+Inserting a boundary in the frontend to seperate the UI logic from the Application logic. Looking at the UI frameworks in place, it is reasonable to assume that they can be replaced with near any UI framework with little to no changes to the Interactor or State layers.
 
 Currently this experiment utilizes Redux as the applications data/state management, where all of its logic should be 'clean', immutable, without side effects. 
 
@@ -21,7 +21,7 @@ The state/data is housed in a seperate section of frontend to protect it from th
 
 ##### Interactors #####
 
-To serve as the communication across the boundry of async/sync and clean/non-clean, the Interactor layer houses that transition logic. Currently, the thought is to have the interactors handle the synchronous Actions and then to Dispatch and return Promises to the UI layer. This will keep the transition between the two different flows from bleeding into the other sides of the boundry.
+To serve as the communication across the boundary of async/sync and clean/non-clean, the Interactor layer houses that transition logic. Currently, the thought is to have the interactors handle the synchronous Actions and then to Dispatch and return Promises to the UI layer. This will keep the transition between the two different flows from bleeding into the other sides of the boundary.
 
 ##### UI Frameworks #####
 
