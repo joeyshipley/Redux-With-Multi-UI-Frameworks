@@ -29,7 +29,7 @@ While this example only uses a few of the 'currently' modern frameworks, near an
 
 For example looking at this commit, we implemented the Angular2 UI interface for the calculator and had only touched a React file because I wanted to do some cosmetic changes that I noticed when working on the Angular version. If I had been a little smarter about it, I would have waited for a seperate commit to show this better. 
 
-https://github.com/joeyshipley/ReduxCalc/commit/3142f400ef19b3fb3046d706f25988293f499c82
+https://github.com/joeyshipley/Redux-With-Multi-UI-Frameworks/commit/3142f400ef19b3fb3046d706f25988293f499c82
 
 ##### Flow #####
 
