@@ -50,20 +50,20 @@ State Management (Reducers | Store)
 
 ##### Folder Structure #####
 
-.
+```
 src
-+- app
-|--- feature folders (calculator, localization, users, etc...)
-|---|--- interactor
-|---|--- actions
-|---|--- reducer
-+- ui 
-|--- (structured based on need: page seperation, feature seperation, components, and so on)
-|--- components
-|--- templates
-|--- pages
-|--- etc...
-
++  app
+|  + feature folders (calculator, localization, users, etc...)
+|    |  - interactor
+|    |  - actions
+|    |  - reducer
++  ui 
+|  + (structured based on need: page seperation, feature seperation, components, and so on)
+|    |  - components
+|    |  - templates
+|    |  - pages
+|    |  - etc...
+```
 
 ## Setup ##
 
