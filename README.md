@@ -21,7 +21,7 @@ The state/data is housed in a seperate section of frontend to protect it from th
 
 ##### Interactors #####
 
-To serve as the communication across the boundary of async/sync and clean/non-clean, the Interactor layer houses that transition logic. Currently, the thought is to have the interactors handle the synchronous Actions and then to Dispatch and return Promises to the UI layer. This will keep the transition between the two different flows from bleeding into the other sides of the boundary.
+To serve as the communication across the boundary of async/sync and pure/non-pure, the Interactor layer houses that transition logic. Currently, the thought is to have the interactors handle the synchronous Actions and then to Dispatch and return Promises to the UI layer. This will keep the transition between the two different flows from bleeding into the other sides of the boundary.
 
 ##### UI Frameworks #####
 
@@ -62,6 +62,7 @@ src
 
 ## Setup ##
 
+* Node 6.0.0 (Ignore node stack traces, does not affect app and will be resolved as community works out the issues)
 * Terminal: npm install
 
 ###### And then choose your front end... ######
