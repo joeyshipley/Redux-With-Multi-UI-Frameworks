@@ -20,8 +20,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     pressNumber: (value) => {
-      if(!this.allowOperators || this.hasCommittedOperator) { return; }
-
       _calculatorInteractor.buildNumber(value);
     },
     pressAdd: () => {
