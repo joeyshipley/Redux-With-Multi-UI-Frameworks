@@ -1,9 +1,12 @@
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
+const AureliaWebpackPlugin = require('aurelia-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   entry: {
-    ng: "./src/ui/angular/angular.app.js",
-    react: "./src/ui/react/react.app.jsx"
+    angular: "./src/ui/angular/angular.app.js",
+    react: "./src/ui/react/react.app.jsx",
+    aurelia: "./src/ui/aurelia/aurelia.app.js"
   },
   output: {
     path: __dirname + '/build',
@@ -35,6 +38,10 @@ module.exports = {
     ignoreCustomFragments: [/\{\{.*?}}/]
   },
   plugins: [
+    new AureliaWebpackPlugin({
+      src: path.resolve('./src/ui/aurelia'),
+      root: path.resolve('.')
+    }),
     new OpenBrowserPlugin({ url: 'http://localhost:8080' })
   ]
 };

@@ -6,13 +6,56 @@
   "scripts": {
     "react": "webpack-dev-server --content-base build/react/ --nowarn_template_set",
     "angular": "webpack-dev-server --content-base build/angular/ --nowarn_template_set",
+    "aurelia": "webpack-dev-server --content-base build/aurelia/ --nowarn_template_set",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "MIT",
+  "aurelia": {
+    "build": {
+      "resources": [
+        "aurelia-templating-resources/dist/es2015/compose",
+        "aurelia-templating-resources/dist/es2015/if",
+        "aurelia-templating-resources/dist/es2015/with",
+        "aurelia-templating-resources/dist/es2015/repeat",
+        "aurelia-templating-resources/dist/es2015/show",
+        "aurelia-templating-resources/dist/es2015/hide",
+        "aurelia-templating-resources/dist/es2015/replaceable",
+        "aurelia-templating-resources/dist/es2015/sanitize-html",
+        "aurelia-templating-resources/dist/es2015/focus",
+        "aurelia-templating-resources/dist/es2015/compile-spy",
+        "aurelia-templating-resources/dist/es2015/view-spy",
+        "aurelia-templating-resources/dist/es2015/binding-mode-behaviors",
+        "aurelia-templating-resources/dist/es2015/throttle-binding-behavior",
+        "aurelia-templating-resources/dist/es2015/debounce-binding-behavior",
+        "aurelia-templating-resources/dist/es2015/signal-binding-behavior",
+        "aurelia-templating-resources/dist/es2015/update-trigger-binding-behavior",
+        "aurelia-templating-router/dist/es2015/router-view",
+        "aurelia-templating-router/dist/es2015/route-loader",
+        "aurelia-templating-router/dist/es2015/route-href",
+        "aurelia-framework",
+        "aurelia-logging-console",
+        "aurelia-templating-binding",
+        "aurelia-templating-resources",
+        "aurelia-templating-router",
+        "aurelia-history-browser",
+        "aurelia-event-aggregator"
+      ],
+      "moduleRootOverride": {
+        "aurelia-templating-resources": "dist/es2015",
+        "aurelia-templating-router": "dist/es2015"
+      }
+    }
+  },
   "dependencies": {
     "angular2": "^2.0.0-beta.17",
+    "aurelia-bootstrapper-webpack": "^1.0.0-beta.1.0.2",
+    "aurelia-framework": "^1.0.0-beta.1.2.5",
+    "aurelia-logging-console": "^1.0.0-beta.2.0.0",
+    "aurelia-templating-binding": "^1.0.0-beta.1.2.4",
+    "aurelia-templating-resources": "^1.0.0-beta.1.2.6",
     "babel-runtime": "^6.6.1",
+    "core-js": "^2.4.0",
     "es6-promise": "^3.1.2",
     "es6-shim": "^0.35.0",
     "lodash": "^4.9.0",
@@ -26,6 +69,8 @@
     "zone.js": "^0.6.12"
   },
   "devDependencies": {
+    "aurelia-tools": "^0.2.1",
+    "aurelia-webpack-plugin": "^1.0.0-beta.2.0.0",
     "babel-core": "^6.7.6",
     "babel-loader": "^6.2.4",
     "babel-plugin-angular2-annotations": "^5.0.0",
@@ -46,5 +91,6 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.12.15",
     "webpack-dev-server": "^1.14.1"
-  }
+  },
+  "language": "javascript"
 }
