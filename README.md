@@ -2,10 +2,15 @@
 
 Explore protecting the frontend logic from the ever changing JS frameworks world.
 
+## WIP ##
+
+Currently Aurelia is not setup or working. Fighting through some aurelia/webpack stuff ATM.
+
 ##### Current Implementations #####
 
 * (UI) - React
 * (UI) - Angular2
+* (UI) - Aurelia
 * (Shared) - Redux
 * (Shared) - Interactors
 
@@ -34,7 +39,7 @@ https://github.com/joeyshipley/Redux-With-Multi-UI-Frameworks/commit/3142f400ef1
 ##### Flow #####
 
 ```
-UI Framework      (Angular | React | etc...)
+UI Framework      (Angular | React | Aurelia | etc...)
      |
      V
 Interactor        (Actions | Dispatch | Promises | API | etc...)
@@ -69,3 +74,4 @@ src
 
 * Terminal: npm run react
 * Terminal: npm run angular
+* Terminal: npm run aurelia
